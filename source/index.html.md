@@ -1,5 +1,5 @@
 ---
-title: API Reference
+title: CoinTR API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - json
@@ -28,7 +28,7 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for the Kittn API
+    content: Documentation for the CoinTR Futures API
 ---
 
 # General Info
