@@ -55,7 +55,7 @@ header {
     display: flex;
     align-items: center;
 
-    &> img {
+    .logo {
       margin-left: 15px;
     }
   }
@@ -416,7 +416,7 @@ header {
   h2 {
     @extend %header-font;
     font-size: 19px;
-    margin-top: 4em;
+    //margin-top: 2em;
     margin-bottom: 0;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
@@ -434,7 +434,7 @@ header {
   // h2s right after h1s should bump right up
   // against the h1s.
   h1 + h2, h1 + div + h2 {
-    margin-top: $h1-margin-bottom * -1;
+    margin-top: $h1-margin-bottom - 108;
     border-top: none;
   }
 
@@ -623,7 +623,7 @@ header {
 
 @media (max-width: $tablet-width) {
   header  .top-nav {
-    &>img {
+    &>.logo {
       margin-left: 40px;
     }
   }
@@ -651,7 +651,7 @@ header {
 
 @media (max-width: $phone-width) {
   header .top-nav {
-    &>img {
+    &>.logo {
       margin-left: 40px;
     }
   }

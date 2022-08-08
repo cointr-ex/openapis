@@ -72,18 +72,15 @@ under the License.
             <%= image_tag('shownav.svg') %>
           </span>
         </a>
-        <%= image_tag "logo.svg", class:'logo' %>
+        <a href="https://www.cointr.com" class="logo" target="_blank"><%= image_tag "logo.svg" %></a>
         <ul class="tabs">
-          <li class="<%= current_page.data.contract_active %>">
-            <a href="<%= current_page.data.contract_url %>">
-              <%= current_page.data.contract %>
-            </a>
-          </li>
-          <li class="<%= current_page.data.spot_goods_active %>">
-              <a href="<%= current_page.data.spot_goods_url %>">
-                <%= current_page.data.spot_goods %>
+          <% current_page.data.top_nav.each do |nav| %>
+            <li class="<%= nav.active %>">
+              <a href="<%= nav.url %>">
+                <%= nav.name %>
               </a>
-          </li>
+            </li>
+          <% end %>
         </ul>
       </div>
       <div class="lang hidden">
