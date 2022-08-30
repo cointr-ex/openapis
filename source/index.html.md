@@ -31,7 +31,7 @@ meta:
 
 Rest endpoint URL: https://api.cointr.com
 
-Websocket endpoint URL: wss://ws-newfutures.cointr.com/ws
+Websocket endpoint URL: wss://[stream.cointr.com/ws](http://stream.cointr.com/ws)
 
 # Terminology
 
@@ -90,9 +90,9 @@ Pagination is supported on some rest API endpoints. The `next` field in response
 Messages sent to the server should contain the following dictionary items:
 
 - `op`: the operation to be run. Should be one of the following:
-
+  
   - `subscribe` to subscribe to a channel;
-
+  
   - `unsubscribe` to unsubscribe from a channel.
 
 - `channel`: the channel to subscribe or unsubscribe.
@@ -104,13 +104,13 @@ Messages sent to the server should contain the following dictionary items:
 After subscription, unsubscription, or authentication request, response from the server will contain the following dictionary items:
 
 - `event`: event happened. Should be one of the following:
-
+  
   - `subscribe`: Indicates a successful subscription;
-
+  
   - `unsubscribe`: Indicates a successful unsubscription;
-
+  
   - `auth`: Indicates a successful authentication.
-
+  
   - `error`: Occurs when there is an error. When `event` is `error`, there will also be `code` and `msg` fields instead of `channel` and `args`.
 
 - `channel`
@@ -130,13 +130,13 @@ Data pushed from the server will contina the following dictionary items:
 - `instId` (optional): instrument ID.
 
 - `action`: type of pushed data. Should be one of the following:
-
+  
   - `initial`: indicates that data in the accompanying `data` field is a snapshot of current data;
-
+  
   - `update`: indicates that data in the accompanying `data` field is incremental;
-
+  
   - `snapshot`: indicates that data sent via this channel is always a snapshot of current data;
-
+  
   - `resumed`: indicates that our system detects data loss(es) from the client side, and therefore the server will send a snapshot of current data in the accompanying `data` field. <u>[unavailable for now]</u>.
 
 - `data`
