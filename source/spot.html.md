@@ -62,9 +62,9 @@ There are 3 possible options:
 
 | **Option**   | **Type** | **Examples**                                                                             |
 | ------------ | -------- | ---------------------------------------------------------------------------------------- |
-| No parameter |          | curl -X GET " https://api.cointr.vip/v1/spot/public/instruments"                         |
-| instId       | String   | curl -X GET " https://api.cointr.vip/v1/spot/public/instruments?instId=USDTTRY"          |
-| instIds      | String   | curl -X GET " https://api.cointr.vip/v1/spot/public/instruments?instIds=USDTTRY,BTCUSDT" |
+| No parameter |          | curl -X GET " https://api.cointr.com/v1/spot/public/instruments"                         |
+| instId       | String   | curl -X GET " https://api.cointr.com/v1/spot/public/instruments?instId=USDTTRY"          |
+| instIds      | String   | curl -X GET " https://api.cointr.com/v1/spot/public/instruments?instIds=USDTTRY,BTCUSDT" |
 
 If any instId provided in either instId or instIds does not exist,  or both instId and instIds are provided,  the endpoint will throw an error. If neither is sent, specifications regarding all instruments will be returned.
 
@@ -219,9 +219,9 @@ There are 3 possible options:
 
 | **Option**   | **Type** | **Examples**                                                                         |
 | ------------ | -------- | ------------------------------------------------------------------------------------ |
-| No parameter |          | curl -X GET " https://api.cointr.vip/v1/spot/market/tickers"                         |
-| instId       | String   | curl -X GET " https://api.cointr.vip/v1/spot/market/tickers?instId=USDTTRY"          |
-| instIds      | List     | curl -X GET " https://api.cointr.vip/v1/spot/market/tickers?instIds=USDTTRY,BTCUSDT" |
+| No parameter |          | curl -X GET " https://api.cointr.com/v1/spot/market/tickers"                         |
+| instId       | String   | curl -X GET " https://api.cointr.com/v1/spot/market/tickers?instId=USDTTRY"          |
+| instIds      | List     | curl -X GET " https://api.cointr.com/v1/spot/market/tickers?instIds=USDTTRY,BTCUSDT" |
 
 If any instId provided in either instId or instIds do not exist,  or both instId and instIds are provided,  the endpoint will throw an error.
 
@@ -791,9 +791,9 @@ There are 3 possible options:
 
 | **Option**   | **Type** | **Examples**                                                                 |
 | ------------ | -------- | ---------------------------------------------------------------------------- |
-| No parameter |          | curl -X GET " https://api.cointr.vip/v1/spot/account/balance"                |
-| ccy          | String   | curl -X GET " https://api.cointr.vip/v1/spot/account/balance?ccy=BTC"        |
-| ccys         | String   | curl -X GET ' https://api.cointr.vip/v1/spot/account/balance?ccys=BTC,USDT"' |
+| No parameter |          | curl -X GET " https://api.cointr.com/v1/spot/account/balance"                |
+| ccy          | String   | curl -X GET " https://api.cointr.com/v1/spot/account/balance?ccy=BTC"        |
+| ccys         | String   | curl -X GET ' https://api.cointr.com/v1/spot/account/balance?ccys=BTC,USDT"' |
 
 If any ccy provided in either ccy or ccys do not exist,  or both ccy and ccys are provided,  the endpoint will throw an error.
 
