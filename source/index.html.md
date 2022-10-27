@@ -2,10 +2,10 @@
 title: CoinTR API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - json
+- json
 
 toc_footers:
-  - <a href='https://www.cointr.com/apikey' target='_blank'>Sign Up for a Developer Key</a>
+- <a href='https://www.cointr.com/apikey' target='_blank'>Sign Up for a Developer Key</a>
 
 top_nav:
 - name: General
@@ -23,23 +23,23 @@ search: true
 code_clipboard: true
 
 meta:
-  - name: description
-    content: Documentation for the CoinTR Futures API
+- name: description
+  content: Documentation for the CoinTR Futures API
 ---
 
 # Access URLs
 
-Rest endpoint URL: https://api.cointr.com
+Rest endpoint URL: https://api.cointr.pro
 
-Websocket endpoint URL: wss://[stream.cointr.com/ws](http://stream.cointr.com/ws)
+Websocket endpoint URL: wss://stream.cointr.pro/ws
 
 # Terminology
 
 - Kline/candlestick bars:
 
-`1M`, `5M`, `15M`, `30M`, `1H`, `4H`, `12H`, `1D`, `1W`
+`1m`, `5m`, `15m`, `30m`, `1H`, `4H`, `12H`, `1D`, `1W`
 
-(M -> minutes; H -> hours; D -> days; W -> weeks)
+(m -> minutes; H -> hours; D -> days; W -> weeks)
 
 - Role: `MAKER`, `TAKER`
 
@@ -90,9 +90,9 @@ Pagination is supported on some rest API endpoints. The `next` field in response
 Messages sent to the server should contain the following dictionary items:
 
 - `op`: the operation to be run. Should be one of the following:
-  
+
   - `subscribe` to subscribe to a channel;
-  
+
   - `unsubscribe` to unsubscribe from a channel.
 
 - `channel`: the channel to subscribe or unsubscribe.
@@ -104,13 +104,13 @@ Messages sent to the server should contain the following dictionary items:
 After subscription, unsubscription, or authentication request, response from the server will contain the following dictionary items:
 
 - `event`: event happened. Should be one of the following:
-  
+
   - `subscribe`: Indicates a successful subscription;
-  
+
   - `unsubscribe`: Indicates a successful unsubscription;
-  
+
   - `auth`: Indicates a successful authentication.
-  
+
   - `error`: Occurs when there is an error. When `event` is `error`, there will also be `code` and `msg` fields instead of `channel` and `args`.
 
 - `channel`
@@ -130,13 +130,13 @@ Data pushed from the server will contina the following dictionary items:
 - `instId` (optional): instrument ID.
 
 - `action`: type of pushed data. Should be one of the following:
-  
+
   - `initial`: indicates that data in the accompanying `data` field is a snapshot of current data;
-  
+
   - `update`: indicates that data in the accompanying `data` field is incremental;
-  
+
   - `snapshot`: indicates that data sent via this channel is always a snapshot of current data;
-  
+
   - `resumed`: indicates that our system detects data loss(es) from the client side, and therefore the server will send a snapshot of current data in the accompanying `data` field. <u>[unavailable for now]</u>.
 
 - `data`
@@ -147,12 +147,12 @@ Data pushed from the server will contina the following dictionary items:
 
 ```json
 {
-"op": "auth", 
-"args": {
-    "apiKey": "78fd833df18857aacddbcc5ff3c6c34a", 
-    "timestamp": "1657770908268", 
+  "op": "auth",
+  "args": {
+    "apiKey": "78fd833df18857aacddbcc5ff3c6c34a",
+    "timestamp": "1657770908268",
     "sign": "f9eb6f9ad6a49c231d23c2a239f5a71912093a0afdc9a1dc1ef9d723636194a2"
-    }
+  }
 }
 ```
 
