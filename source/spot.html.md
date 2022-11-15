@@ -2,10 +2,10 @@
 title: CoinTR API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
- - json
+- json
 
 toc_footers:
- - <a href='https://www.cointr.com/apikey' target='_blank'>Sign Up for a Developer Key</a>
+- <a href='https://www.cointr.com/apikey' target='_blank'>Sign Up for a Developer Key</a>
 
 top_nav:
 - name: General
@@ -86,28 +86,28 @@ If any instId provided in either instId or instIds does not exist,  or both inst
 
 ```json
 {
-    "code": "0",
-    "msg": "",
-    "data": [
-     [
-        1657630800,             //open time
-        "3.721",                //open price
-        "3.743",                //highest price
-        "3.677",                //lowest price
-        "3.708",                //close price
-        "8422410",              //trading volume in base currency
-        "22698348.04828491"     //trading volume in quote currency
+  "code": "0",
+  "msg": "",
+  "data": [
+    [
+      1657630800,             //open time
+      "3.721",                //open price
+      "3.743",                //highest price
+      "3.677",                //lowest price
+      "3.708",                //close price
+      "8422410",              //trading volume in base currency
+      "22698348.04828491"     //trading volume in quote currency
     ],
     [
-        1657627200,
-        "3.731",
-        "3.799",
-        "3.494",
-        "3.72",
-        "24912403",
-        "67632347.24399722"
+      1657627200,
+      "3.731",
+      "3.799",
+      "3.494",
+      "3.72",
+      "24912403",
+      "67632347.24399722"
     ]
-    ]
+  ]
 }
 ```
 
@@ -146,16 +146,16 @@ Data is limited to the most recent 2000 ones. If limit sent excedes the maximum 
   "msg": "",
   "data": {
     "asks": [
-    [
-      "41006.8",      //depth price
-      "0.60038921"    //the number of base currency at the price
-    ]
+      [
+        "41006.8",      //depth price
+        "0.60038921"    //the number of base currency at the price
+      ]
     ],
     "bids": [
-    [
-    "41006.3",      //depth price
-    "0.30178218"    //the number of base currency at the price
-    ]
+      [
+        "41006.3",      //depth price
+        "0.30178218"    //the number of base currency at the price
+      ]
     ],
     "uTime": 1629966436396
   }
@@ -185,23 +185,23 @@ GET  /v1/spot/market/depths
 
 ```json
 {
-    "code":"0",
-    "msg":"",
-    "data":[
-     {
-        "instId":"BTCUSDT",
-        "lastPx":"9999.99",
-        "lastSz":"0.1",
-        "askPx":"9999.99",
-        "askSz":"11",
-        "bidPx":"8888.88",
-        "bidSz":"5",
-        "open24h":"9000",
-        "high24h":"10000",
-        "low24h":"8888.88",
-        "vol24h":"222",
-        "quoteVol24h":"2184548",
-        "uTime":1597026383085
+  "code":"0",
+  "msg":"",
+  "data":[
+    {
+      "instId":"BTCUSDT",
+      "lastPx":"9999.99",
+      "lastSz":"0.1",
+      "askPx":"9999.99",
+      "askSz":"11",
+      "bidPx":"8888.88",
+      "bidSz":"5",
+      "open24h":"9000",
+      "high24h":"10000",
+      "low24h":"8888.88",
+      "vol24h":"222",
+      "quoteVol24h":"2184548",
+      "uTime":1597026383085
     }, ......
   ]
 }
@@ -247,26 +247,26 @@ If any instId provided in either instId or instIds do not exist,  or both instId
 
 ```json
 {
-    "code": "0",
-    "msg": "",
-    "data": [
-        {
-            "instId": "BTCUSDT",
-            "side": "SELL",
-            "sz": "0.00001",
-            "px": "29963.2",
-            "tradeId": "242720720",
-            "mTime": 1654161646974
-        },
-        {
-            "instId": "BTCUSDT",
-            "side": "SELL",
-            "sz": "0.00001",
-            "px": "29964.1",
-            "tradeId": "242720719",
-            "mTime": 1654161641568
-        }, ......
-    ]
+  "code": "0",
+  "msg": "",
+  "data": [
+    {
+      "instId": "BTCUSDT",
+      "side": "SELL",
+      "sz": "0.00001",
+      "px": "29963.2",
+      "tradeId": "242720720",
+      "mTime": 1654161646974
+    },
+    {
+      "instId": "BTCUSDT",
+      "side": "SELL",
+      "sz": "0.00001",
+      "px": "29964.1",
+      "tradeId": "242720719",
+      "mTime": 1654161641568
+    }, ......
+  ]
 }
 ```
 
@@ -302,7 +302,7 @@ GET  /v1/spot/market/trades
   "data": {
     "ordId": 1740149532655617,
     "state": "SUBMITTED",
-    "clOrdId": "cointrspot6" 
+    "clOrdId": "cointrspot6"
   }
 }
 
@@ -312,7 +312,7 @@ OR
   "code": 5050,
   "msg": "",
   "data": {
-    "clOrdId": "cointrspot6" 
+    "clOrdId": "cointrspot6"
   }
 }
 ```
@@ -334,7 +334,7 @@ POST  /v1/spot/trade/order
 | ordType       | Enum     | Yes          | Order type: `MARKET`, `LIMIT`                                                                  |
 | flags         | String   | Yes          | Additional flag or multiple flags separated with comma. If no flag applies, "" should be sent. |
 | timeInForce   | Enum     | No           | Time in force. Default: `GTC`.                                                                 |
-| async         | Boolean  | No           | Allowing asynchronous order placing. If `True`, {} will be returned.  Default: `False`.        |
+| asyncState    | Enum     | No           | Asynchronous order placing state: ACCEPTED, SUBMITTING, MATCHED. <br/> Default: MATCHED.       |
 
 - Response parameters
 
@@ -372,19 +372,19 @@ POST  /v1/spot/trade/batch-orders
 
 - Request parameters
 
-| **Parameter** | **Type** | **Required** | **Description**                                                                        |
-| ------------- | -------- | ------------ | -------------------------------------------------------------------------------------- |
-| instId        | String   | Yes          | Instrument ID.                                                                         |
-| async         | Boolean  | No           | Allowing asynchronous order placing. If `True`, {} will be returned. Default: `False`. |
-| details       | Array    | Yes          | Detailed order information.                                                            |
-| >clOrdId      | String   | Yes          | Client-supplied order ID.                                                              |
-| >px           | String   | Optional     | Price                                                                                  |
-| >baseQty      | String   | Optional     | Order quantity in base currency, applicable to non-market-buy orders.                  |
-| >quoteQty     | String   | Optional     | Order quantity in quote currency, only applicable to market-buy orders.                |
-| >side         | Enum     | Yes          | Order side.                                                                            |
-| >ordType      | Enum     | Yes          | Order type: `LIMIT`.                                                                   |
-| >flags        | String   | Yes          | Additional flag or multiple flags separated with comma.                                |
-| >timeInForce  | String   | No           | Time in force. Default: `GTC`.                                                         |
+| **Parameter** | **Type** | **Required** | **Description**                                                                          |
+| ------------- | -------- | ------------ | ---------------------------------------------------------------------------------------- |
+| instId        | String   | Yes          | Instrument ID.                                                                           |
+| asyncState    | Enum     | No           | Asynchronous order placing state: ACCEPTED, SUBMITTING, MATCHED. <br/> Default: MATCHED. |
+| details       | Array    | Yes          | Detailed order information.                                                              |
+| >clOrdId      | String   | Yes          | Client-supplied order ID.                                                                |
+| >px           | String   | Optional     | Price                                                                                    |
+| >baseQty      | String   | Optional     | Order quantity in base currency, applicable to non-market-buy orders.                    |
+| >quoteQty     | String   | Optional     | Order quantity in quote currency, only applicable to market-buy orders.                  |
+| >side         | Enum     | Yes          | Order side.                                                                              |
+| >ordType      | Enum     | Yes          | Order type: `LIMIT`.                                                                     |
+| >flags        | String   | Yes          | Additional flag or multiple flags separated with comma.                                  |
+| >timeInForce  | String   | No           | Time in force. Default: `GTC`.                                                           |
 
 - Response parameters
 
@@ -415,12 +415,12 @@ POST   /v1/spot/trade/cancel-order
 
 - Request parameters
 
-| **Parameter** | **Type** | **Required** | **Description**                                                                          |
-| ------------- | -------- | ------------ | ---------------------------------------------------------------------------------------- |
-| instId        | String   | Yes          | Instrument ID                                                                            |
-| ordId         | String   | Optional     | Order ID.                                                                                |
-| clOrdId       | String   | Optional     | Client-supplied order ID.                                                                |
-| async         | Boolean  | No           | Allowing asynchronous order canceling. If `True`, {} will be returned. Default: `False`. |
+| **Parameter** | **Type** | **Required** | **Description**                                                               |
+| ------------- | -------- | ------------ | ----------------------------------------------------------------------------- |
+| instId        | String   | Yes          | Instrument ID                                                                 |
+| ordId         | String   | Optional     | Order ID.                                                                     |
+| clOrdId       | String   | Optional     | Client-supplied order ID.                                                     |
+| asyncState    | Enum     | No           | Asynchronous order canceling state: CANCELING, CLOSED. <br/> Default: CLOSED. |
 
 Either `orderId` or `clOrdId` must be sent. If both are sent, the endpoint will throw an error.
 
@@ -458,12 +458,12 @@ POST   /v1/spot/trade/cancel-batch-orders
 
 - Request parameters
 
-| **Parameter** | **Type** | **Required** | **Description**                                                                          |
-| ------------- | -------- | ------------ | ---------------------------------------------------------------------------------------- |
-| instId        | String   | Yes          | Instrument ID                                                                            |
-| ordIds        | String   | Optional     | Order ID or order IDs separated with comma.                                              |
-| clOrdIds      | String   | Optional     | Client-supplied order ID or client-supplied order IDs separated with comma.              |
-| async         | Boolean  | No           | Allowing asynchronous order canceling. If `True`, {} will be returned. Default: `False`. |
+| **Parameter** | **Type** | **Required** | **Description**                                                               |
+| ------------- | -------- | ------------ | ----------------------------------------------------------------------------- |
+| instId        | String   | Yes          | Instrument ID                                                                 |
+| ordIds        | String   | Optional     | Order ID or order IDs separated with comma.                                   |
+| clOrdIds      | String   | Optional     | Client-supplied order ID or client-supplied order IDs separated with comma.   |
+| asyncState    | Enum     | No           | Asynchronous order canceling state: CANCELING, CLOSED. <br/> Default: CLOSED. |
 
 - Response parameters
 
