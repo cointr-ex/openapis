@@ -404,7 +404,7 @@
 
 <ul>
 <li><p>Role: <code>MAKER</code>, <code>TAKER</code></p></li>
-<li><p>Order state: <code>ACCEPTED</code>, <code>SUBMITTING</code>, <code>SUBMITTED</code>, <code>PARTIAL-FILLED</code>, <code>CANCELING</code>, <code>CANCELED</code>, <code>FILLED</code>, <code>STOPPED</code>, <code>TRIGGERED</code>, <code>EXPIRED</code></p></li>
+<li><p>Order state: <code>ACCEPTED</code>, <code>SUBMITTING</code>, <code>SUBMITTED</code>, <code>PARTIAL_FILLED</code>, <code>CANCELING</code>, <code>CANCELED</code>, <code>FILLED</code>, <code>STOPPED</code>, <code>TRIGGERED</code>, <code>EXPIRED</code></p></li>
 </ul>
 
 <p>(In some extreme scenarios, order state of <code>SUBMITTING</code> will be returned by order-placing requests. State of <code>SUBMITTING</code> indicates that asset involved in the order has been frozen and whereas the order has not been fed into our matching engine yet. Orders of <code>SUBMITTING</code> state will never trigger data pushes of our Websocket channels. )</p>
@@ -412,7 +412,7 @@
 <ul>
 <li><p>Order/trade side/direction (side): <code>BUY</code>, <code>SELL</code></p></li>
 <li><p>Order type (ordType): <code>MARKET</code>, <code>LIMIT</code>, <code>STOP</code>, <code>STOP_LIMIT</code></p></li>
-<li><p>Order flags: <code>POST_ONLY</code>, <code>REDUCE_ONL</code></p></li>
+<li><p>Order flags: <code>POST_ONLY</code>, <code>REDUCE_ONLY</code></p></li>
 <li><p>Time in force (timeInForce): <code>GTC</code>, <code>IOC</code>, <code>FOK</code></p></li>
 <li><p>Transfer type: <code>SPOT_TO_FUTURE</code>, <code>FUTURE_TO_SPOT</code></p></li>
 <li><p>Position mode (posMode): <code>LONG_SHORT_MODE</code>, <code>NET_MODE</code></p></li>
