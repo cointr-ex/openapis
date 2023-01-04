@@ -43,7 +43,7 @@ Websocket endpoint URL: wss://stream.cointr.pro/ws
 
 - Role: `MAKER`, `TAKER`
 
-- Order state: `ACCEPTED`, `SUBMITTING`, `SUBMITTED`, `PARTIAL-FILLED`, `CANCELING`, `CANCELED`, `FILLED`, `STOPPED`, `TRIGGERED`, `EXPIRED`
+- Order state: `ACCEPTED`, `SUBMITTING`, `SUBMITTED`, `PARTIAL_FILLED`, `CANCELING`, `CANCELED`, `FILLED`, `STOPPED`, `TRIGGERED`, `EXPIRED`
 
 (In some extreme scenarios, order state of `SUBMITTING` will be returned by order-placing requests. State of `SUBMITTING` indicates that asset involved in the order has been frozen and whereas the order has not been fed into our matching engine yet. Orders of `SUBMITTING` state will never trigger data pushes of our Websocket channels. )
 
@@ -51,7 +51,7 @@ Websocket endpoint URL: wss://stream.cointr.pro/ws
 
 - Order type (ordType): `MARKET`, `LIMIT`, `STOP`, `STOP_LIMIT`
 
-- Order flags: `POST_ONLY`, `REDUCE_ONL`
+- Order flags: `POST_ONLY`, `REDUCE_ONLY`
 
 - Time in force (timeInForce): `GTC`, `IOC`, `FOK`
 
