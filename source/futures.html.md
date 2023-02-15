@@ -2,10 +2,10 @@
 title: CoinTR API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - json
+- json
 
 toc_footers:
-  - <a href='https://www.cointr.com/apikey' target='_blank'>Sign Up for a Developer Key</a>
+- <a href='https://www.cointr.com/apikey' target='_blank'>Sign Up for a Developer Key</a>
 
 top_nav:
 - name: General
@@ -23,8 +23,8 @@ search: true
 code_clipboard: true
 
 meta:
-  - name: description
-    content: Documentation for the CoinTR Futures API
+- name: description
+  content: Documentation for the CoinTR Futures API
 ---
 
 # Market Data
@@ -137,22 +137,22 @@ GET  /v1/futures/public/position-tiers
   "code": 0,
   "data": [
     [
-        "1597026383085",        //open time
-        "3.721",                //open price
-        "3.743",                //highest price
-        "3.677",                //lowest price
-        "3.708",                //close price
-        "8422410",              //the number of contracts traded
-        "22698348.04828491"     //trading volume in quote currency
+      "1597026383085",        //open time
+      "3.721",                //open price
+      "3.743",                //highest price
+      "3.677",                //lowest price
+      "3.708",                //close price
+      "8422410",              //the number of contracts traded
+      "22698348.04828491"     //trading volume in quote currency
     ],
     [
-        "1597026383085",
-        "3.731",
-        "3.799",
-        "3.494",
-        "3.72",
-        "24912403",
-        "67632347.24399722"
+      "1597026383085",
+      "3.731",
+      "3.799",
+      "3.494",
+      "3.72",
+      "24912403",
+      "67632347.24399722"
     ]
   ],
   "message": "success"
@@ -470,7 +470,7 @@ POST  /v1/futures/trade/batch-orders
 | state         | Enum     | Order state. Applicable if order is successfully placed. |
 | error         | Int      | Erro code. Returned if order is not successfully placed. |
 
-## Cancel and Order
+## Cancel an Order
 
 ```json
 {
