@@ -436,7 +436,11 @@
 </ol>
 <h1 id='pagination'>Pagination</h1>
 <p>Pagination is supported on some rest API endpoints. The <code>next</code> field in response data indicates that the number of items requested exceeds the specified page limit and thus some items within the query window are not returned. To get these items, API users should set the <code>after</code> parameter as the <code>next</code> field value and make another request without changing any other request parameter(s).</p>
-<h1 id='websocket'>Websocket</h1><h2 id='request-format'>Request format</h2>
+<h1 id='websocket'>Websocket</h1>
+<p>The websocket server will send a <code>ping frame</code> every 5 seconds. If the websocket server does not receive a <code>pong frame</code> back from the connection within a 15 second period, the connection will be disconnected. Unsolicited pong frames are allowed.</p>
+
+<p>Websocket requests and responses use JSON.</p>
+<h2 id='request-format'>Request format</h2>
 <p>Messages sent to the server should contain the following dictionary items:</p>
 
 <ul>
