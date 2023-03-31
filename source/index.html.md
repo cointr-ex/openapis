@@ -2,19 +2,19 @@
 title: CoinTR API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-- json
+  - json
 
 toc_footers:
-- <a href='https://www.cointr.com/apikey' target='_blank'>Sign Up for a Developer Key</a>
+  - <a href='https://www.cointr.com/apikey' target='_blank'>Sign Up for a Developer Key</a>
 
 top_nav:
-- name: General
-  active: active
-  url: 'index.html'
-- name: Futures
-  url: 'futures.html'
-- name: Spot
-  url: 'spot.html'
+  - name: General
+    active: active
+    url: 'index.html'
+  - name: Futures
+    url: 'futures.html'
+  - name: Spot
+    url: 'spot.html'
 
 active: active
 
@@ -23,8 +23,8 @@ search: true
 code_clipboard: true
 
 meta:
-- name: description
-  content: Documentation for the CoinTR Futures API
+  - name: description
+    content: Documentation for the CoinTR Futures API
 ---
 
 # Access URLs
@@ -84,6 +84,10 @@ Our signature algorithm involves two steps of `HMAC SHA256` operations:
 Pagination is supported on some rest API endpoints. The `next` field in response data indicates that the number of items requested exceeds the specified page limit and thus some items within the query window are not returned. To get these items, API users should set the `after` parameter as the `next` field value and make another request without changing any other request parameter(s).
 
 # Websocket
+
+The websocket server will send a `ping frame` every 5 seconds. If the websocket server does not receive a `pong frame` back from the connection within a 15 second period, the connection will be disconnected. Unsolicited pong frames are allowed.
+
+Websocket requests and responses use JSON.
 
 ## Request format
 
