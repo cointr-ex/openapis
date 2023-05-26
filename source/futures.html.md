@@ -2,19 +2,19 @@
 title: CoinTR API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-- json
+  - json
 
 toc_footers:
-- <a href='https://www.cointr.com/apikey' target='_blank'>Sign Up for a Developer Key</a>
+  - <a href='https://www.cointr.com/apikey' target='_blank'>Sign Up for a Developer Key</a>
 
 top_nav:
-- name: General
-  url: 'index.html'
-- name: Futures
-  active: active
-  url: 'futures.html'
-- name: Spot
-  url: 'spot.html'
+  - name: General
+    url: 'index.html'
+  - name: Futures
+    active: active
+    url: 'futures.html'
+  - name: Spot
+    url: 'spot.html'
 
 active: active
 
@@ -23,8 +23,8 @@ search: true
 code_clipboard: true
 
 meta:
-- name: description
-  content: Documentation for the CoinTR Futures API
+  - name: description
+    content: Documentation for the CoinTR Futures API
 ---
 
 # Market Data
@@ -236,8 +236,7 @@ GET  /v1/futures/market/depths
   "code": 0,
   "data": {
     "fundingRate": "-0.003",
-    "fundingTime": 1659052800000,
-    "nextFundingRate": "-0.003"
+    "fundingTime": 1659052800000
   },
   "message": "success"
 }
@@ -255,11 +254,10 @@ GET  /v1/futures/market/funding-rate
 
 - Response parameters
 
-| **Parameter**   | **Type** | **Description**                                         |
-| --------------- | -------- | ------------------------------------------------------- |
-| fundingRate     | String   | Current funding rate.                                   |
-| nextFundingRate | String   | Estimated funding rate for the next period.             |
-| fundingTime     | Long     | Settlement time, unix timestamp format in milliseconds. |
+| **Parameter** | **Type** | **Description**                                         |
+| ------------- | -------- | ------------------------------------------------------- |
+| fundingRate   | String   | Current funding rate.                                   |
+| fundingTime   | Long     | Settlement time, unix timestamp format in milliseconds. |
 
 ## Market Snapshot
 
