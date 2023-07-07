@@ -298,9 +298,9 @@ There are 3 possible options:
 
 | **Option**   | **Type** | **Examples**                                                                            |
 | ------------ | -------- | --------------------------------------------------------------------------------------- |
-| No parameter |          | curl -X GET " https://api.cointr.vip/v1/futures/market/tickers"                         |
-| instId       | String   | curl -X GET " https://api.cointr.vip/v1/futures/market/tickers?instId=USDTTRY"          |
-| instIds      | List     | curl -X GET " https://api.cointr.vip/v1/futures/market/tickers?instIds=USDTTRY,BTCUSDT" |
+| No parameter |          | curl -X GET " https://api.cointr.pro/v1/futures/market/tickers"                         |
+| instId       | String   | curl -X GET " https://api.cointr.pro/v1/futures/market/tickers?instId=USDTTRY"          |
+| instIds      | List     | curl -X GET " https://api.cointr.pro/v1/futures/market/tickers?instIds=USDTTRY,BTCUSDT" |
 
 If any instId provided in either instId or instIds do not exist,  or both instId and instIds are provided,  the endpoint will throw an error.
 
