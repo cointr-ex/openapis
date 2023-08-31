@@ -2,19 +2,19 @@
 title: CoinTR API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-- json
+  - json
 
 toc_footers:
-- <a href='https://www.cointr.com/apikey' target='_blank'>Sign Up for a Developer Key</a>
+  - <a href='https://www.cointr.com/apikey' target='_blank'>Sign Up for a Developer Key</a>
 
 top_nav:
-- name: General
-  url: 'index.html'
-- name: Futures
-  url: 'futures.html'
-- name: Spot
-  active: active
-  url: 'spot.html'
+  - name: General
+    url: 'index.html'
+  - name: Futures
+    url: 'futures.html'
+  - name: Spot
+    active: active
+    url: 'spot.html'
 
 active: active
 
@@ -24,8 +24,8 @@ code_clipboard: true
 
 meta:
 
-- name: description
-  content: Documentation for the CoinTR Spot API
+  - name: description
+    content: Documentation for the CoinTR Spot API
 
 ---
 
@@ -146,16 +146,16 @@ Data is limited to the most recent 2000 ones. If limit sent excedes the maximum 
   "msg": "",
   "data": {
     "asks": [
-      [
-        "41006.8",      //depth price
-        "0.60038921"    //the number of base currency at the price
-      ]
+    [
+      "41006.8",      //depth price
+      "0.60038921"    //the number of base currency at the price
+    ]
     ],
     "bids": [
-      [
-        "41006.3",      //depth price
-        "0.30178218"    //the number of base currency at the price
-      ]
+    [
+    "41006.3",      //depth price
+    "0.30178218"    //the number of base currency at the price
+    ]
     ],
     "uTime": 1629966436396
   }
@@ -185,23 +185,23 @@ GET  /v1/spot/market/depths
 
 ```json
 {
-  "code":"0",
-  "msg":"",
-  "data":[
-    {
-      "instId":"BTCUSDT",
-      "lastPx":"9999.99",
-      "lastSz":"0.1",
-      "askPx":"9999.99",
-      "askSz":"11",
-      "bidPx":"8888.88",
-      "bidSz":"5",
-      "open24h":"9000",
-      "high24h":"10000",
-      "low24h":"8888.88",
-      "vol24h":"222",
-      "quoteVol24h":"2184548",
-      "uTime":1597026383085
+    "code":"0",
+    "msg":"",
+    "data":[
+     {
+        "instId":"BTCUSDT",
+        "lastPx":"9999.99",
+        "lastSz":"0.1",
+        "askPx":"9999.99",
+        "askSz":"11",
+        "bidPx":"8888.88",
+        "bidSz":"5",
+        "open24h":"9000",
+        "high24h":"10000",
+        "low24h":"8888.88",
+        "vol24h":"222",
+        "quoteVol24h":"2184548",
+        "uTime":1597026383085
     }, ......
   ]
 }
@@ -217,10 +217,10 @@ GET  /v1/spot/market/tickers
 
 There are 3 possible options:
 
-| **Option**   | **Type** | **Examples**                                                                         |
-| ------------ | -------- | ------------------------------------------------------------------------------------ |
-| No parameter |          | curl -X GET " https://api.cointr.pro/v1/spot/market/tickers"                         |
-| instId       | String   | curl -X GET " https://api.cointr.pro/v1/spot/market/tickers?instId=USDTTRY"          |
+| **Option**   | **Type** | **Examples**                                                 |
+| ------------ | -------- | ------------------------------------------------------------ |
+| No parameter |          | curl -X GET " https://api.cointr.pro/v1/spot/market/tickers" |
+| instId       | String   | curl -X GET " https://api.cointr.pro/v1/spot/market/tickers?instId=USDTTRY" |
 | instIds      | List     | curl -X GET " https://api.cointr.pro/v1/spot/market/tickers?instIds=USDTTRY,BTCUSDT" |
 
 If any instId provided in either instId or instIds do not exist,  or both instId and instIds are provided,  the endpoint will throw an error.
@@ -247,26 +247,26 @@ If any instId provided in either instId or instIds do not exist,  or both instId
 
 ```json
 {
-  "code": "0",
-  "msg": "",
-  "data": [
-    {
-      "instId": "BTCUSDT",
-      "side": "SELL",
-      "sz": "0.00001",
-      "px": "29963.2",
-      "tradeId": "242720720",
-      "mTime": 1654161646974
-    },
-    {
-      "instId": "BTCUSDT",
-      "side": "SELL",
-      "sz": "0.00001",
-      "px": "29964.1",
-      "tradeId": "242720719",
-      "mTime": 1654161641568
-    }, ......
-  ]
+    "code": "0",
+    "msg": "",
+    "data": [
+        {
+            "instId": "BTCUSDT",
+            "side": "SELL",
+            "sz": "0.00001",
+            "px": "29963.2",
+            "tradeId": "242720720",
+            "mTime": 1654161646974
+        },
+        {
+            "instId": "BTCUSDT",
+            "side": "SELL",
+            "sz": "0.00001",
+            "px": "29964.1",
+            "tradeId": "242720719",
+            "mTime": 1654161641568
+        }, ......
+    ]
 }
 ```
 
@@ -302,7 +302,7 @@ GET  /v1/spot/market/trades
   "data": {
     "ordId": 1740149532655617,
     "state": "SUBMITTED",
-    "clOrdId": "cointrspot6"
+    "clOrdId": "cointrspot6" 
   }
 }
 
@@ -312,7 +312,7 @@ OR
   "code": 5050,
   "msg": "",
   "data": {
-    "clOrdId": "cointrspot6"
+    "clOrdId": "cointrspot6" 
   }
 }
 ```
@@ -789,10 +789,10 @@ GET  /v1/spot/asset/balance
 
 There are 3 possible options:
 
-| **Option**   | **Type** | **Examples**                                                                 |
-| ------------ | -------- | ---------------------------------------------------------------------------- |
-| No parameter |          | curl -X GET " https://api.cointr.pro/v1/spot/account/balance"                |
-| ccy          | String   | curl -X GET " https://api.cointr.pro/v1/spot/account/balance?ccy=BTC"        |
+| **Option**   | **Type** | **Examples**                                                 |
+| ------------ | -------- | ------------------------------------------------------------ |
+| No parameter |          | curl -X GET " https://api.cointr.pro/v1/spot/account/balance" |
+| ccy          | String   | curl -X GET " https://api.cointr.pro/v1/spot/account/balance?ccy=BTC" |
 | ccys         | String   | curl -X GET ' https://api.cointr.pro/v1/spot/account/balance?ccys=BTC,USDT"' |
 
 If any ccy provided in either ccy or ccys do not exist,  or both ccy and ccys are provided,  the endpoint will throw an error.
@@ -974,7 +974,7 @@ Data pushed from the server will contina the following dictionary items:
 | **Parameter** | **Type** | **Required** | **Description**                                |
 | ------------- | -------- | ------------ | ---------------------------------------------- |
 | op            | Enum     | Yes          | Operation: `auth`                              |
-| args          | Array    | Yes          | Request parameters.                            |
+| args          | Object   | Yes          | Request parameters.                            |
 | >apiKey       | String   | Yes          | API access key.                                |
 | >timestamp    | String   | Yes          | Current timestamp in milliseconds.             |
 | >sign         | String   | Yes          | SHA256 HMAC operation details are shown below. |
@@ -1009,13 +1009,13 @@ Our signature algorithm involves two steps of `HMAC SHA256` operations:
 
 - Request parameters
 
-| **Parameter** | **Type** | **Required** | **Description**                                                      |
-| ------------- | -------- | ------------ | -------------------------------------------------------------------- |
-| op            | Enum     | Yes          | Operation: `subscribe`, `unsubscribe`                                |
-| channel       | Enum     | Yes          | Channel name: `kline_spot`                                           |
-| args          | Array    | Yes          | Request parameters                                                   |
-| >instId       | String   | Yes          | Instrument ID                                                        |
-| >bar          | Enum     | Yes          | Kline bar.                                                           |
+| **Parameter** | **Type** | **Required** | **Description**                                              |
+| ------------- | -------- | ------------ | ------------------------------------------------------------ |
+| op            | Enum     | Yes          | Operation: `subscribe`, `unsubscribe`                        |
+| channel       | Enum     | Yes          | Channel name: `kline_spot`                                   |
+| args          | Object   | Yes          | Request parameters                                           |
+| >instId       | String   | Yes          | Instrument ID                                                |
+| >bar          | Enum     | Yes          | Kline bar.                                                   |
 | >initialNum   | Int      | No           | The number of recent klines sent at `inital` push.Default: 0Max: 200 |
 
 - Push data parameters
@@ -1055,12 +1055,12 @@ Retrieve best ask and bid.
 
 - Request parameters
 
-| **Parameter** | **Type** | **Required** | **Description**                                                |
-| ------------- | -------- | ------------ | -------------------------------------------------------------- |
-| op            | Enum     | Yes          | Operation: `subscribe`, `unsubscribe`                          |
-| channel       | Enum     | Yes          | Channel name: `mini_books_spot`                                |
-| args          | Array    | Yes          | Request parameters                                             |
-| >instId       | String   | Yes          | Instrument ID                                                  |
+| **Parameter** | **Type** | **Required** | **Description**                                              |
+| ------------- | -------- | ------------ | ------------------------------------------------------------ |
+| op            | Enum     | Yes          | Operation: `subscribe`, `unsubscribe`                        |
+| channel       | Enum     | Yes          | Channel name: `mini_books_spot`                              |
+| args          | Object   | Yes          | Request parameters                                           |
+| >instId       | String   | Yes          | Instrument ID                                                |
 | >updateSpeed  | Int      | No           | Time intervals of pushes in milliseconds.Default: 500Min: 300. |
 
 - Push data parameters
@@ -1110,14 +1110,14 @@ Retrieve best ask and bid.
 
 - Request parameters
 
-| **Parameter** | **Type** | **Required** | **Description**                                                 |
-| ------------- | -------- | ------------ | --------------------------------------------------------------- |
-| op            | Enum     | Yes          | Operation: `subscribe`, `unsubscribe`                           |
-| channel       | Enum     | Yes          | Channel name: `books_spot`                                      |
-| args          | Array    | Yes          | Request parameters                                              |
-| >instId       | String   | Yes          | Instrument ID                                                   |
-| >step         | String   | Yes          | Arregated step.                                                 |
-| >limit        | Int      | No           | Order book depth per side. Default: 5;Max: 20.                  |
+| **Parameter** | **Type** | **Required** | **Description**                                              |
+| ------------- | -------- | ------------ | ------------------------------------------------------------ |
+| op            | Enum     | Yes          | Operation: `subscribe`, `unsubscribe`                        |
+| channel       | Enum     | Yes          | Channel name: `books_spot`                                   |
+| args          | Object   | Yes          | Request parameters                                           |
+| >instId       | String   | Yes          | Instrument ID                                                |
+| >step         | String   | Yes          | Arregated step.                                              |
+| >limit        | Int      | No           | Order book depth per side. Default: 5;Max: 20.               |
 | >updateSpeed  | Int      | No           | Time intervals of pushes in milliseconds.Default: 500;Min: 300. |
 
 - Push data parameters
@@ -1155,12 +1155,12 @@ Retrieve the recent trades data. Data will be pushed whenever there is a trade.
 
 - Request parameters
 
-| **Parameter** | **Type** | **Required** | **Description**                                                              |
-| ------------- | -------- | ------------ | ---------------------------------------------------------------------------- |
-| op            | Enum     | Yes          | Operation: `subscribe`, `unsubscribe`.                                       |
-| channel       | Enum     | Yes          | Channel name: `trades_spot`.                                                 |
-| args          | Array    | No           | Request parameters                                                           |
-| >instId       | String   | Yes          | Instrument ID.                                                               |
+| **Parameter** | **Type** | **Required** | **Description**                                              |
+| ------------- | -------- | ------------ | ------------------------------------------------------------ |
+| op            | Enum     | Yes          | Operation: `subscribe`, `unsubscribe`.                       |
+| channel       | Enum     | Yes          | Channel name: `trades_spot`.                                 |
+| args          | Object   | Yes          | Request parameters                                           |
+| >instId       | String   | Yes          | Instrument ID.                                               |
 | >initialNum   | Int      | No           | The number of recent trades pushed at the `initial` push.Default: 50Max: 200 |
 
 - Push data parameters

@@ -296,10 +296,10 @@ GET  /v1/futures/market/tickers
 
 There are 3 possible options:
 
-| **Option**   | **Type** | **Examples**                                                                            |
-| ------------ | -------- | --------------------------------------------------------------------------------------- |
-| No parameter |          | curl -X GET " https://api.cointr.pro/v1/futures/market/tickers"                         |
-| instId       | String   | curl -X GET " https://api.cointr.pro/v1/futures/market/tickers?instId=USDTTRY"          |
+| **Option**   | **Type** | **Examples**                                                 |
+| ------------ | -------- | ------------------------------------------------------------ |
+| No parameter |          | curl -X GET " https://api.cointr.pro/v1/futures/market/tickers" |
+| instId       | String   | curl -X GET " https://api.cointr.pro/v1/futures/market/tickers?instId=USDTTRY" |
 | instIds      | List     | curl -X GET " https://api.cointr.pro/v1/futures/market/tickers?instIds=USDTTRY,BTCUSDT" |
 
 If any instId provided in either instId or instIds do not exist,  or both instId and instIds are provided,  the endpoint will throw an error.
@@ -1229,13 +1229,13 @@ The Kline/Candlestick Stream push updates to the current klines/candlestick ever
 
 - Request parameters
 
-| **Parameter** | **Type** | **Required** | **Description**                                                      |
-| ------------- | -------- | ------------ | -------------------------------------------------------------------- |
-| op            | Enum     | Yes          | Operation: `subscribe`, `unsubscribe`                                |
-| channel       | Enum     | Yes          | Channel name: `kline_perp`                                           |
-| args          | Array    | Yes          | Request parameters.                                                  |
-| >instId       | String   | Yes          | Instrument ID.                                                       |
-| >bar          | Enum     | Yes          | Kline bar.                                                           |
+| **Parameter** | **Type** | **Required** | **Description**                                              |
+| ------------- | -------- | ------------ | ------------------------------------------------------------ |
+| op            | Enum     | Yes          | Operation: `subscribe`, `unsubscribe`                        |
+| channel       | Enum     | Yes          | Channel name: `kline_perp`                                   |
+| args          | Object   | Yes          | Request parameters.                                          |
+| >instId       | String   | Yes          | Instrument ID.                                               |
+| >bar          | Enum     | Yes          | Kline bar.                                                   |
 | >initialNum   | Int      | No           | The number of recent klines sent at `inital` push.Default: 0Max: 200 |
 
 - Push data parameters
@@ -1275,12 +1275,12 @@ Retrieve best ask and bid.
 
 - Request parameters
 
-| **Parameter** | **Type** | **Required** | **Description**                                                |
-| ------------- | -------- | ------------ | -------------------------------------------------------------- |
-| op            | Enum     | Yes          | Operation: `subscribe`, `unsubscribe`                          |
-| channel       | Enum     | Yes          | Channel name: `mini_books_perp`                                |
-| args          | Array    | Yes          | Request parameters                                             |
-| >instId       | String   | Yes          | Instrument ID                                                  |
+| **Parameter** | **Type** | **Required** | **Description**                                              |
+| ------------- | -------- | ------------ | ------------------------------------------------------------ |
+| op            | Enum     | Yes          | Operation: `subscribe`, `unsubscribe`                        |
+| channel       | Enum     | Yes          | Channel name: `mini_books_perp`                              |
+| args          | Object   | Yes          | Request parameters                                           |
+| >instId       | String   | Yes          | Instrument ID                                                |
 | >updateSpeed  | Int      | No           | Time intervals of pushes in milliseconds.Default: 500Min: 300. |
 
 - Push data parameters
@@ -1330,14 +1330,14 @@ Retrieve best ask and bid.
 
 - Request parameters
 
-| **Parameter** | **Type** | **Required** | **Description**                                                 |
-| ------------- | -------- | ------------ | --------------------------------------------------------------- |
-| op            | Enum     | Yes          | Operation: `subscribe`, `unsubscribe`                           |
-| channel       | Enum     | Yes          | Channel name: `books_perp`                                      |
-| args          | Array    | Yes          | Request parameters                                              |
-| >instId       | String   | Yes          | Instrument ID                                                   |
-| >step         | String   | Yes          | Arregated step.                                                 |
-| >limit        | Int      | No           | Order book depth per side. Default: 5;Max: 20.                  |
+| **Parameter** | **Type** | **Required** | **Description**                                              |
+| ------------- | -------- | ------------ | ------------------------------------------------------------ |
+| op            | Enum     | Yes          | Operation: `subscribe`, `unsubscribe`                        |
+| channel       | Enum     | Yes          | Channel name: `books_perp`                                   |
+| args          | Object   | Yes          | Request parameters                                           |
+| >instId       | String   | Yes          | Instrument ID                                                |
+| >step         | String   | Yes          | Arregated step.                                              |
+| >limit        | Int      | No           | Order book depth per side. Default: 5;Max: 20.               |
 | >updateSpeed  | Int      | No           | Time intervals of pushes in milliseconds.Default: 500;Min: 300. |
 
 - Push data parameters
@@ -1397,13 +1397,13 @@ Retrieve the recent trades data. Data will be pushed whenever there is a trade.
 
 - Request parameters
 
-| **Parameter** | **Type** | **Required** | **Description**                                                              |
-| ------------- | -------- | ------------ | ---------------------------------------------------------------------------- |
-| op            | Enum     | Yes          | Operation: `subscribe`, `unsubscribe`.                                       |
-| channel       | Enum     | Yes          | Channel name: `trades_perp`.                                                 |
-| args          | Array    | No           | Request parameters                                                           |
+| **Parameter** | **Type** | **Required** | **Description**                                              |
+| ------------- | -------- | ------------ | ------------------------------------------------------------ |
+| op            | Enum     | Yes          | Operation: `subscribe`, `unsubscribe`.                       |
+| channel       | Enum     | Yes          | Channel name: `trades_perp`.                                 |
+| args          | Object   | Yes          | Request parameters                                           |
 | >initialNum   | Int      | No           | The number of recent trades pushed at the `initial` push.Default: 50Max: 200 |
-| >instId       | String   | Yes          | Instrument ID.                                                               |
+| >instId       | String   | Yes          | Instrument ID.                                               |
 
 - Push data parameters
 
