@@ -323,18 +323,18 @@ POST  /v1/spot/trade/order
 
 - Request parameters
 
-| **Parameter** | **Type** | **Required** | **Description**                                                                                |
-| ------------- | -------- | ------------ | ---------------------------------------------------------------------------------------------- |
-| instId        | String   | Yes          | Instrument ID                                                                                  |
-| clOrdId       | String   | Yes          | Client-supplied order ID.                                                                      |
-| px            | String   | Optional     | Price, applicable when `ordType` is `LIMIT`.                                                   |
-| baseQty       | String   | Optional     | Order quantity in base currency, applicable to non-market-buy orders.                          |
-| quoteQty      | String   | Optional     | Order quantity in quote currency, only applicable to market-buy orders.                        |
-| side          | Enum     | Yes          | Order side.                                                                                    |
-| ordType       | Enum     | Yes          | Order type: `MARKET`, `LIMIT`                                                                  |
+| **Parameter** | **Type** | **Required** | **Description**                                              |
+| ------------- | -------- | ------------ | ------------------------------------------------------------ |
+| instId        | String   | Yes          | Instrument ID                                                |
+| clOrdId       | String   | Yes          | Client-supplied order ID.                                    |
+| px            | String   | Optional     | Price, applicable when `ordType` is `LIMIT`.                 |
+| baseQty       | String   | Optional     | Order quantity in base currency, applicable to non-market-buy orders. |
+| quoteQty      | String   | Optional     | Order quantity in quote currency, only applicable to market-buy orders. |
+| side          | Enum     | Yes          | Order side.                                                  |
+| ordType       | Enum     | Yes          | Order type: `MARKET`, `LIMIT`                                |
 | flags         | String   | Yes          | Additional flag or multiple flags separated with comma. If no flag applies, "" should be sent. |
-| timeInForce   | Enum     | No           | Time in force. Default: `GTC`.                                                                 |
-| asyncState    | Enum     | No           | Asynchronous order placing state: ACCEPTED, SUBMITTING, MATCHED. <br/> Default: MATCHED.       |
+| timeInForce   | Enum     | No           | Time in force. Default: `GTC`.                               |
+| asyncState    | Enum     | No           | Asynchronous order placing state: ACCEPTED, SUBMITTING, MATCHED. <br/> Default: SUBMITTING. |
 
 - Response parameters
 
@@ -372,19 +372,19 @@ POST  /v1/spot/trade/batch-orders
 
 - Request parameters
 
-| **Parameter** | **Type** | **Required** | **Description**                                                                          |
-| ------------- | -------- | ------------ | ---------------------------------------------------------------------------------------- |
-| instId        | String   | Yes          | Instrument ID.                                                                           |
-| asyncState    | Enum     | No           | Asynchronous order placing state: ACCEPTED, SUBMITTING, MATCHED. <br/> Default: MATCHED. |
-| details       | Array    | Yes          | Detailed order information.                                                              |
-| >clOrdId      | String   | Yes          | Client-supplied order ID.                                                                |
-| >px           | String   | Optional     | Price                                                                                    |
-| >baseQty      | String   | Optional     | Order quantity in base currency, applicable to non-market-buy orders.                    |
-| >quoteQty     | String   | Optional     | Order quantity in quote currency, only applicable to market-buy orders.                  |
-| >side         | Enum     | Yes          | Order side.                                                                              |
-| >ordType      | Enum     | Yes          | Order type: `LIMIT`.                                                                     |
-| >flags        | String   | Yes          | Additional flag or multiple flags separated with comma.                                  |
-| >timeInForce  | String   | No           | Time in force. Default: `GTC`.                                                           |
+| **Parameter** | **Type** | **Required** | **Description**                                              |
+| ------------- | -------- | ------------ | ------------------------------------------------------------ |
+| instId        | String   | Yes          | Instrument ID.                                               |
+| asyncState    | Enum     | No           | Asynchronous order placing state: ACCEPTED, SUBMITTING, MATCHED. <br/> Default: SUBMITTING. |
+| details       | Array    | Yes          | Detailed order information.                                  |
+| >clOrdId      | String   | Yes          | Client-supplied order ID.                                    |
+| >px           | String   | Optional     | Price                                                        |
+| >baseQty      | String   | Optional     | Order quantity in base currency, applicable to non-market-buy orders. |
+| >quoteQty     | String   | Optional     | Order quantity in quote currency, only applicable to market-buy orders. |
+| >side         | Enum     | Yes          | Order side.                                                  |
+| >ordType      | Enum     | Yes          | Order type: `LIMIT`.                                         |
+| >flags        | String   | Yes          | Additional flag or multiple flags separated with comma.      |
+| >timeInForce  | String   | No           | Time in force. Default: `GTC`.                               |
 
 - Response parameters
 
@@ -791,9 +791,9 @@ There are 3 possible options:
 
 | **Option**   | **Type** | **Examples**                                                 |
 | ------------ | -------- | ------------------------------------------------------------ |
-| No parameter |          | curl -X GET " https://api.cointr.pro/v1/spot/account/balance" |
-| ccy          | String   | curl -X GET " https://api.cointr.pro/v1/spot/account/balance?ccy=BTC" |
-| ccys         | String   | curl -X GET ' https://api.cointr.pro/v1/spot/account/balance?ccys=BTC,USDT"' |
+| No parameter |          | curl -X GET " https://api.cointr.pro/v1/spot/asset/balance"  |
+| ccy          | String   | curl -X GET " https://api.cointr.pro/v1/spot/asset/balance?ccy=BTC" |
+| ccys         | String   | curl -X GET ' https://api.cointr.pro/v1/spot/asset/balance?ccys=BTC,USDT"' |
 
 If any ccy provided in either ccy or ccys do not exist,  or both ccy and ccys are provided,  the endpoint will throw an error.
 
