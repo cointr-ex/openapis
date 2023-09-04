@@ -1089,7 +1089,7 @@
 <td>asyncState</td>
 <td>Enum</td>
 <td>No</td>
-<td>Asynchronous order placing state: ACCEPTED, SUBMITTING, MATCHED. <br/> Default: MATCHED.</td>
+<td>Asynchronous order placing state: ACCEPTED, SUBMITTING, MATCHED. <br/> Default: SUBMITTING.</td>
 </tr>
 </tbody></table>
 
@@ -1166,7 +1166,7 @@
 <td>asyncState</td>
 <td>Enum</td>
 <td>No</td>
-<td>Asynchronous order placing state: ACCEPTED, SUBMITTING, MATCHED. <br/> Default: MATCHED.</td>
+<td>Asynchronous order placing state: ACCEPTED, SUBMITTING, MATCHED. <br/> Default: SUBMITTING.</td>
 </tr>
 <tr>
 <td>details</td>
@@ -2118,17 +2118,17 @@
 <tr>
 <td>No parameter</td>
 <td></td>
-<td>curl -X GET &quot; https://api.cointr.pro/v1/spot/account/balance&quot;</td>
+<td>curl -X GET &quot; https://api.cointr.pro/v1/spot/asset/balance&quot;</td>
 </tr>
 <tr>
 <td>ccy</td>
 <td>String</td>
-<td>curl -X GET &quot; https://api.cointr.pro/v1/spot/account/balance?ccy=BTC&quot;</td>
+<td>curl -X GET &quot; https://api.cointr.pro/v1/spot/asset/balance?ccy=BTC&quot;</td>
 </tr>
 <tr>
 <td>ccys</td>
 <td>String</td>
-<td>curl -X GET &#39; https://api.cointr.pro/v1/spot/account/balance?ccys=BTC,USDT&quot;&#39;</td>
+<td>curl -X GET &#39; https://api.cointr.pro/v1/spot/asset/balance?ccys=BTC,USDT&quot;&#39;</td>
 </tr>
 </tbody></table>
 
